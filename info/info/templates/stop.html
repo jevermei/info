@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Please add a stop</title>
+    </head>
+<body>
+{%for a in line%}
+    <p>{{a.line_number}}</p>
+{%endfor%}
+<form method="get">
+    <p> linenumber: <input type ="text" name = "lineNr" ></input></p>
+    <p> name of the stop : <input type="text" name="stopname"></input></p>
+    {%for i in stops %}
+    <p>{{i.stopname}} : {{i.stop_line}}</p>
+
+    {%endfor%}
+    <p><input type="submit" value="Register the stop"></input></p> 
+    <p><a href="/welcome">go back to mainpage </a></p>
+</form>
+</body>
+</html>

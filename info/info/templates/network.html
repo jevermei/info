@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<title>
+    add transport line
+</title>
+
+<body>
+    <p> Add a new transport line: </p>
+    {% if empty%}
+    <p> {{empty}}</p>
+    {% endif %}
+    {%for i in stops %}
+    <p>{{i.stopname}} : {{i.stop_line}}</p>
+
+    {%endfor%}
+    <form action='/network' method="get">
+        <p>line number :<input type="text" name="line_number"></input></p>
+        <p><input type="submit" value="Register the transport line"></input></p>
+    </form>
+    {%for a in line%}
+    <p>{{a}}</p>
+    <p><a href="/stop">add stops </a></p>
+    {%endfor%}
+    <p><a href="/welcome">go back to mainpage </a></p>
+</body>
+
+</html>

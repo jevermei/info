@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>info stage</title>
+</head>
+
+<body>
+    <p>Welcome </p>
+    <form action="/network" method="get">
+        {% if erroradmin %}
+        <p> {{erroradmin}}</p>
+        {%else%}
+        <p> {{admin}}</p>
+        <p><a href="/network">add transport line </a></p>
+        {% endif %}
+        
+        {%for a in line%}
+        <p>{{a}}</p>
+        {%endfor%}
+        <p><a href="/report"> report a stop</a></p>
+       
+
+    
+    </form>
+</body>
+
+</html>

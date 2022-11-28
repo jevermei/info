@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>report a stop</title>
+    </head>
+<body>
+    {%for a in line%}
+    <p> ligne {{a.line_number}}</p>
+    {%endfor%}
+    {%for i in stops %}
+    <p>{{i.stopname}} : {{i.stop_line}}</p>
+    {%endfor%}
+
+        <form action="/report" method="get">
+        <p>report the line of the stop:<input type="text" name="reportline"></input></p>
+        <p>report a stop:<input type="text" name="reportstop"></input></p>
+        {% if thanks %}
+        <p> {{thanks}}</p>
+        {%endif%}
+        <p><input type="submit" value="report"></input></p>
+        <p><a href="/welcome">go back to mainpage</a></p>
+    </form>
+</body>
+</html>
